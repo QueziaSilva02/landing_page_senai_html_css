@@ -8,19 +8,19 @@
 
 /* Trabalhando com variáveis de CSS (Para as cores) */
 :root {
-  --cor-primaria:#f90030;
-  --cor-secundaria:#a259f7;
-  --cor-destaque:#ffaf00;
-  --fundo-escuro: #080324;
-  --texto-claro: #fff;
-  --texto-cinza:#c7bab3;
+  --cor-primaria: #F9003D;   /* Vermelho SENAI */
+  --cor-secundaria: #A259F7; /* Roxo SENAI */
+  --cor-destaque: #FFAF00;   /* Amarelo SENAI */
+  --fundo-escuro: #080324;   /* Fundo escuro principal */
+  --texto-claro: #FFFFFF;    /* Branco */
+  --texto-cinza: #C7BAB3;    /* Cinza claro */
 }
 
 /* Estilos Gerais */
 body {
   background-color: var(--fundo-escuro);
-  color:var(--texto-claro);
-  font-family: 'bebas Neue', sans-serif;
+  color: var(--texto-claro);
+  font-family: 'Bebas Neue', sans-serif;
   line-height: 1.6;
   font-size: 18px;
 }
@@ -30,39 +30,36 @@ address {
 }
 
 .container {
-  background-color: 85%;
+  width: 85%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem 0;
 }
 
-/* ============= CABEÇALHO ================ */
+/* Header (Cabeçalho) */
 .header {
   background-color: var(--cor-primaria);
-  position: fixed;
+  position: fixed; /* Mantém o cabeçalho no topo da tela */
   width: 100%;
   z-index: 10;
   padding: 0.5rem 0;
 }
-
 .nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
   gap: 1rem;
 }
-
 .logo {
   height: 40px;
 }
-
+/* Menu de navegação */
 .menu {
   display: flex;
-  gap: 1.5rem;
-  list-style: none;
+  gap: 1.3rem;
+  list-style: none; /* Remove os marcadores da lista */
 }
-
 .menu a {
   color: var(--texto-claro);
   text-decoration: none;
@@ -75,32 +72,34 @@ address {
   color: var(--cor-destaque);
 }
 
+/* Estilo diferenciado para botão (Contate-nos) */
 .botao {
   background-color: var(--cor-secundaria);
-  color: var(--texto-claro);
+  color: var(--texto-claro) !important; /* !important para sobrescrever a cor do link */
   padding: 0.6rem 1.5rem;
   border-radius: 5px;
   font-weight: 700;
   font-size: 1.2rem;
   transition: all 0.3s ease-in-out;
 }
-
 .botao:hover {
   background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-destaque));
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05); /* Efeito de elevação */
 }
 
-/* ================ BANNER PRINCIPAL ================= */
+/* Main */
+/* Banner (Estilos) */
 .banner {
-  background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("../assets/imagem-fundo-banner.jpg");
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+              url("../assets/imagem-fundo-banner.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 100vh; 
+  min-height: 100vh; /* Ocupa a altura inteira da tela */
   display: flex;
   align-items: center;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 60px; /* Espaço para o header fixo */
 }
 
 .conteudo-banner h1 {
@@ -114,45 +113,38 @@ address {
   background-color: var(--cor-destaque);
   margin: 1rem auto;
 }
-
 .subtitulo {
   font-size: 1.8rem;
-  color: var(--texto-claro);
+  color: var(--texto-cinza);
   margin-bottom: 2rem;
 }
-
 .mouse {
   width: 60px;
   margin-top: 2rem;
   opacity: 0.8;
 }
 
-/* ============== SEÇAO SOBRE ================ */
+/* Seção Sobre */
 .sobre {
   background-color: #181012;
   padding: 4rem 0;
 }
-
-
-.tiulo-secao {
+.titulo-secao{
   color: var(--cor-primaria);
   font-size: 3rem;
   margin-bottom: 2rem;
   text-align: center;
 }
-
-/* Container flex para organizar imagem e texto lado a lado */
 .conteudo-sobre {
   display: flex;
   gap: 3rem;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Adicionado para garantir a quebra em telas menores */
 }
 
 .imagem-sobre {
   width: 45%;
   border-radius: 10px;
-  /* Adicionado para eviatr que a imagem encolha demais */
   min-width: 300px;
   flex: 1;
 }
@@ -162,41 +154,36 @@ address {
   min-width: 300px;
   flex: 1;
 }
-
 .destaque {
   color: var(--cor-destaque);
   font-weight: 700;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
-
 .texto-sobre h3 {
   font-size: 2.5rem;
   margin: 1rem 0;
 }
-
 .texto-sobre p {
   color: var(--texto-cinza);
   font-size: 1.2rem;
 }
 
-/* =============== SECÃO DE INFORMAÇÕES (CARDS) =============== */
+/* Cards (Estilos) */
 .info {
   padding: 4rem 0;
   text-align: center;
 }
 
-/* Estilização da lista (UL) que contém os cards */
 .cards-info {
-  list-style: none;
+  list-style: none; /* Remove marcadores da lista */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha */
 }
 
-/* Estilizaçao de cada irem da lista (LI) como um card */
 .card {
   background-color: #241A1C;
   padding: 2rem;
@@ -204,13 +191,11 @@ address {
   text-align: center;
   width: 300px;
 }
-
 .card h3 {
   color: var(--cor-destaque);
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
-
 .card p {
   background-color: var(--fundo-escuro);
   padding: 1.5rem;
@@ -219,12 +204,12 @@ address {
   font-size: 1.5rem;
 }
 
-/* ================= SECÃO ENDERECO =================== */
+/* Endereço e mapa (Estilos) */
+
 .endereco {
   padding: 4rem 0;
 }
 
-/* Container flex para organizar o texto do endereço e o mapa */
 .conteudo-endereco {
   display: flex;
   justify-content: space-between;
@@ -233,72 +218,57 @@ address {
   flex-wrap: wrap;
   gap: 2rem;
 }
-
-.texto-endereco {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  flex-grow: 1;
-}
-
 .mapa {
   width: 350px;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-  
-/* =============== RODAPE ================= */
+
+/* Rodapé (Footer) */
 .footer {
   background-color: var(--cor-primaria);
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem;
   margin-top: 4rem;
   font-size: 1.2rem;
 }
 
-/* ============== RESPONSIVIDADE (MEDIA QUERIES) ================== */
-@media (max-widht: 768px){
-
+/* __________________________ */
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  /* Haeder */
   .nav-header {
-    justify-content: center;
+    justify-content: center; /* MUDANÇA: Altera de 'space-between' para 'center' */
   }
-
   .menu {
     padding-top: 0;
   }
 
-  /* Coloca os elementos das seções um abaixo do outro */
   .conteudo-sobre,
   .conteudo-endereco {
-    flex-direction: column;
+    flex-direction: column; /* Coloca os itens em coluna */
     gap: 2rem;
   }
-
-  /* Faz a imagem e o texto ocuparem toda a largura */
-  .imagem-sobre, 
-  .imagem-sobre {
-    width: 100%;
+  .imagem-sobre,
+  .texto-sobre {
+     width: 100%; /* Garante que ocupem 100% do container */
   }
-
-  /* Centraliza o texto do endereço quando ele esta em coluna */
+  
+  /* Centraliza o texto do endereço quando ele está em coluna */
   .conteudo-endereco {
     text-align: center;
   }
 
-   /* Reduz o tamamnho das fontes para melhor legibilidade */
-  .conteudo-banner h1 { font-size: 3.5rem; padding: 50px;} 
+  /* Reduz o tamanho das fontes para melhor legibilidade */
+  .conteudo-banner h1 { font-size: 3.5rem; }
   .subtitulo { font-size: 1.5rem; }
-  .tiulo-secao { font-size: 2.5rem; }
+  .titulo-secao { font-size: 2.5rem; }
   .texto-sobre h3 { font-size: 2rem; }
   .texto-sobre p { font-size: 1.1rem; }
-  .card h3 { font-size: 1.5rem; }
-  .card p { font-size: 1.3rem; }
-  .texto-endereco { font-size: 1.1rem; }
+  .card h3, .card p {font-size: 1.5rem;}
+  .texto-endereco { font-size: 1.1rem;}
 
-  /* Faz o mapa ocupar 100% de largura container */
   .mapa {
     width: 100%;
   }
 }
-
-
-  
