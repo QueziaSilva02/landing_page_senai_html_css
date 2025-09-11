@@ -36,6 +36,7 @@ address {
   padding: 1rem 0;
 }
 
+/* ============= CABEÇALHO ================ */
 .header {
   background-color: var(--cor-primaria);
   position: fixed;
@@ -83,3 +84,221 @@ address {
   font-size: 1.2rem;
   transition: all 0.3s ease-in-out;
 }
+
+.botao:hover {
+  background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-destaque));
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* ================ BANNER PRINCIPAL ================= */
+.banner {
+  background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("../assets/imagem-fundo-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.conteudo-banner h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.linha-destaque {
+  width: 200px;
+  height: 2px;
+  background-color: var(--cor-destaque);
+  margin: 1rem auto;
+}
+
+.subtitulo {
+  font-size: 1.8rem;
+  color: var(--texto-claro);
+  margin-bottom: 2rem;
+}
+
+.mouse {
+  width: 60px;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+/* ============== SEÇAO SOBRE ================ */
+.sobre {
+  background-color: #181012;
+  padding: 4rem 0;
+}
+
+
+.tiulo-secao {
+  color: var(--cor-primaria);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Container flex para organizar imagem e texto lado a lado */
+.conteudo-sobre {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.imagem-sobre {
+  width: 45%;
+  border-radius: 10px;
+  /* Adicionado para eviatr que a imagem encolha demais */
+  min-width: 300px;
+  flex: 1;
+}
+
+.texto-sobre {
+  width: 50%;
+  min-width: 300px;
+  flex: 1;
+}
+
+.destaque {
+  color: var(--cor-destaque);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.texto-sobre h3 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.texto-sobre p {
+  color: var(--texto-cinza);
+  font-size: 1.2rem;
+}
+
+/* =============== SECÃO DE INFORMAÇÕES (CARDS) =============== */
+.info {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+/* Estilização da lista (UL) que contém os cards */
+.cards-info {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Estilizaçao de cada irem da lista (LI) como um card */
+.card {
+  background-color: #241A1C;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.card h3 {
+  color: var(--cor-destaque);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  background-color: var(--fundo-escuro);
+  padding: 1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* ================= SECÃO ENDERECO =================== */
+.endereco {
+  padding: 4rem 0;
+}
+
+/* Container flex para organizar o texto do endereço e o mapa */
+.conteudo-endereco {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.texto-endereco {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  flex-grow: 1;
+}
+
+.mapa {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+  
+/* =============== RODAPE ================= */
+.footer {
+  background-color: var(--cor-primaria);
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 4rem;
+  font-size: 1.2rem;
+}
+
+/* ============== RESPONSIVIDADE (MEDIA QUERIES) ================== */
+@media (max-widht: 768px){
+
+  .nav-header {
+    justify-content: center;
+  }
+
+  .menu {
+    padding-top: 0;
+  }
+
+  /* Coloca os elementos das seções um abaixo do outro */
+  .conteudo-sobre,
+  .conteudo-endereco {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Faz a imagem e o texto ocuparem toda a largura */
+  .imagem-sobre, 
+  .imagem-sobre {
+    width: 100%;
+  }
+
+  /* Centraliza o texto do endereço quando ele esta em coluna */
+  .conteudo-endereco {
+    text-align: center;
+  }
+
+   /* Reduz o tamamnho das fontes para melhor legibilidade */
+  .conteudo-banner h1 { font-size: 3.5rem; padding: 50px;} 
+  .subtitulo { font-size: 1.5rem; }
+  .tiulo-secao { font-size: 2.5rem; }
+  .texto-sobre h3 { font-size: 2rem; }
+  .texto-sobre p { font-size: 1.1rem; }
+  .card h3 { font-size: 1.5rem; }
+  .card p { font-size: 1.3rem; }
+  .texto-endereco { font-size: 1.1rem; }
+
+  /* Faz o mapa ocupar 100% de largura container */
+  .mapa {
+    width: 100%;
+  }
+}
+
+
+  
